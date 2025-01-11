@@ -1,0 +1,32 @@
+{
+    "name": "mirun",
+    "productName": "mirun",
+    "version": "1.0.0",
+    "description": "MIRun is a software that runs applications developed in PHP for desktop Linux Debian, Linux Ubuntu and Windows.",
+    "main": "main.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "electron .",
+      "package-win32": "electron-forge package --platform=win32",
+      "package": "electron-forge package",
+      "make-win32": "electron-forge make --platform=win32",
+      "make": "electron-forge make"
+    },
+    "author": {
+      "name": "Murilo Gomes Julio",
+      "email": "contato@mestredainfo.com.br",
+      "organization": "Mestre da Info",
+      "contact": "https://www.mestredainfo.com.br/p/contato.html",
+      "url": "https://www.mestredainfo.com.br"
+    },
+    "copyright": "Copyright (C) 2025 Murilo Gomes Julio",
+    "homepage": "https://www.mestredainfo.com.br",
+    "license": "MIT",
+    "devDependencies": {
+      "@electron-forge/cli": "^7.4.0",
+      "@electron-forge/maker-zip": "^7.4.0",
+      "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+      "electron": "^33.3.1"
+    }
+  }
+  

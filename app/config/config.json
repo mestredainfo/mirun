@@ -1,0 +1,30 @@
+{
+	"app": {
+		"id": "mirun",
+		"name": "MIRun",
+		"width": 800,
+		"height": 600,
+		"resizable": true,
+		"frame": true,
+		"icon": "mirun.png",
+		"disableAccelerationHardware": true,
+		"author": {
+			"name": "Murilo Gomes Julio",
+			"email": "contato@mestredainfo.com.br",
+			"organization": "Mestre da Info",
+			"contact": "https://www.mestredainfo.com.br/p/contato.html",
+			"url": "https://www.mestredainfo.com.br"
+		},
+		"homepage": "https://www.mestredainfo.com.br",
+		"license": "MIT",
+		"copyright": "Copyright (C) 2025 Murilo Gomes Julio"
+	},
+	"server": {
+		"perm": true,
+		"router": false
+	},
+	"dev": {
+		"menu": true,
+		"tools": false
+	}
+}
