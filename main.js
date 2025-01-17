@@ -298,7 +298,7 @@ function getMenuTemplate(win, menuData) {
                         // Verifica se é uma página ou URL
                         if (menuData[sKey][sSubMenuKey].page) {
                             if (menuData[sKey][sSubMenuKey].newwindow) {
-                                miSistemaNewWindow(menuData[sKey][sSubMenuKey].page, menuData[sKey][sSubMenuKey].width, menuData[sKey][sSubMenuKey].height, menuData[sKey][sSubMenuKey].resizable, menuData[sKey][sSubMenuKey].frame, menuData[sKey][sSubMenuKey].menu, menuData[sKey][sSubMenuKey].hide)
+                                mirunNewWindow(menuData[sKey][sSubMenuKey].page, menuData[sKey][sSubMenuKey].width, menuData[sKey][sSubMenuKey].height, menuData[sKey][sSubMenuKey].resizable, menuData[sKey][sSubMenuKey].frame, menuData[sKey][sSubMenuKey].menu, menuData[sKey][sSubMenuKey].hide)
                             } else {
                                 win.loadURL(sServerName + menuData[sKey][sSubMenuKey].page);
                             }

@@ -20,26 +20,20 @@ module.exports = class milang {
 
         process.env.MIRUN_LANG = aLang;
 
-        if (fs.existsSync(path.join(dirapp, '/app/langs/en.json'))) {
-            process.env.MIRUN_LANG = aLang;
+        // Idioma do App
+        let sPath = path.join(dirapp, '/app/langs/', `${aLang}.json`);
 
-            // Idioma do App
-            let sPath = path.join(dirapp, '/app/langs/', `${aLang}.json`);
-
-            if (fs.existsSync(sPath)) {
-                this.sLangApp = JSON.parse(fs.readFileSync(sPath), 'utf-8');
-            } else {
-                if (fs.existsSync(path.join(dirapp, '/app/langs/en.json'))) {
-                    this.sLangApp = JSON.parse(fs.readFileSync(path.join(dirapp, '/app/langs/en.json'), 'utf-8'));
-                } else {
-                    this.sLangApp = [];
-                }
-            }
+        if (fs.existsSync(sPath)) {
+            this.sLangApp = JSON.parse(fs.readFileSync(sPath), 'utf-8');
         } else {
-            this.sLangApp = [];
+            if (fs.existsSync(path.join(dirapp, '/app/langs/en.json'))) {
+                this.sLangApp = JSON.parse(fs.readFileSync(path.join(dirapp, '/app/langs/en.json'), 'utf-8'));
+            } else {
+                this.sLangApp = [];
+            }
         }
     }
-    
+
     traduzir(texto, ...values) {
         return (this.sLangApp[texto]) ? require('util').format(this.sLangApp[texto], ...values) : require('util').format(texto, ...values);
     }

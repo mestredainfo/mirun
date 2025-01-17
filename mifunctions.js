@@ -53,8 +53,8 @@ module.exports = {
         });
 
         // Função para caixa de alerta
-        ipcMain.handle('appMessage', async (event, title, msg, type) => {
-            let sButtons = [milang.traduzir('Continue')];
+        ipcMain.handle('appMessage', async (event, title, msg, type, button) => {
+            let sButtons = [button];
 
             let options = {
                 type: type,
@@ -69,7 +69,7 @@ module.exports = {
 
         // Função para caixa de confirmação
         ipcMain.handle('appConfirm', async (event, title, msg, type, ...buttons) => {
-            let sButtons = [milang.traduzir('Continue'), milang.traduzir('Cancel'), ...buttons];
+            let sButtons = [...buttons];
 
             let options = {
                 type: type,

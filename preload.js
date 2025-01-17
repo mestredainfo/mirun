@@ -10,7 +10,7 @@ ipcRenderer.setMaxListeners(20);
 
 contextBridge.exposeInMainWorld('mirun', {
     version: (type) => ipcRenderer.invoke('appVersao', type),
-    alert: (title, msg, type, ...buttons) => ipcRenderer.invoke('appMessage', title, msg, type, ...buttons),
+    alert: (title, msg, type, button) => ipcRenderer.invoke('appMessage', title, msg, type, button),
     confirm: (title, msg, type, ...buttons) => ipcRenderer.invoke('appConfirm', title, msg, type, ...buttons),
     newWindow: (url, width, height, resizable, frame, menu, hide) => ipcRenderer.invoke('appNewWindow', url, width, height, resizable, frame, menu, hide),
     openURL: (url) => ipcRenderer.invoke('appExterno', url),
@@ -21,6 +21,5 @@ contextBridge.exposeInMainWorld('mirun', {
     notification: (title, text) => ipcRenderer.invoke('appNotification', title, text),
     tray: (title, tooltip, icon, menu) => ipcRenderer.invoke('appTray', title, tooltip, icon, menu),
     exportPDF: (filename, options) => ipcRenderer.invoke('appExportPDF', filename, options),
-    devTools: () => ipcRenderer.invoke('appDevTools'),
-    close: () => ipcRenderer.invoke('appSair'),
+    devTools: () => ipcRenderer.invoke('appDevTools')
 });

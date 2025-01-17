@@ -20,7 +20,7 @@
 		"copyright": "Copyright (C) 2025 Murilo Gomes Julio"
 	},
 	"server": {
-		"perm": true,
+		"perm": false,
 		"router": false
 	},
 	"dev": {
