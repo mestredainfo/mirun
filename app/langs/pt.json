@@ -21,7 +21,5 @@
 "Error terminating process on port:":"Erro ao encerrar o processo na porta:",
 "Process at the port":"Processo na porta",
 "completed successfully.":"concluído com sucesso.",
-"Server stopped.":"Servidor parou.",
-"Continue":"Continuar",
-"Cancel":"Cancelar"
+"Server stopped.":"Servidor parou."
 }

@@ -21,7 +21,5 @@
 "Error terminating process on port:":"Error terminating process on port:",
 "Process at the port":"Process at the port",
 "completed successfully.":"completed successfully.",
-"Server stopped.":"Server stopped.",
-"Continue":"Continue",
-"Cancel":"Cancel"
+"Server stopped.":"Server stopped."
 }
