@@ -1,19 +1,23 @@
 <?php
 $sDirLang = dirname(__FILE__) . '/langs/';
 
-$sText = json_decode(file_get_contents($sDirLang . $_ENV['MIRUN_LANG'] . '.json'), true);
+if (file_exists($sDirLang . $_ENV['MIRUN_LANG'] . '.json')) {
+    $sText = json_decode(file_get_contents($sDirLang . $_ENV['MIRUN_LANG'] . '.json'), true);
 
-function translate($text, ...$values):string {
-    global $sText;
+    function translate($text, ...$values): string
+    {
+        global $sText;
 
-    $a = sprintf($sText[$text], ...$values);
+        $value = empty($sText[$text]) ? $text : $sText[$text];
+        $a = sprintf($value, ...$values);
 
-    return $a;
+        return $a;
+    }
+
+    echo '<h3>PHP</h3>';
+    echo translate('Continue') . '<br>';
+    echo translate('Unable to find file %s', 'example.txt');
 }
-
-echo '<h3>PHP</h3>';
-echo translate('Continue') . '<br>';
-echo translate('Unable to find file %s', 'example.txt');
 ?>
 <h3>JavaScript</h3>
 <div id="example"></div>

@@ -21,5 +21,6 @@ contextBridge.exposeInMainWorld('mirun', {
     notification: (title, text) => ipcRenderer.invoke('appNotification', title, text),
     tray: (title, tooltip, icon, menu) => ipcRenderer.invoke('appTray', title, tooltip, icon, menu),
     exportPDF: (filename, options) => ipcRenderer.invoke('appExportPDF', filename, options),
-    devTools: () => ipcRenderer.invoke('appDevTools')
+    devTools: () => ipcRenderer.invoke('appDevTools'),
+    close: () => ipcRenderer.invoke('appSair'),
 });

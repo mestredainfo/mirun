@@ -68,7 +68,7 @@ header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-in
                     newwindow: true
                 },
                 "Message": {
-                    script: "mirun.alert('MIRun', 'This is an example message!', 'info');"
+                    script: "mirun.alert('MIRun', 'This is an example message!', 'info', 'Continue');"
                 },
                 "Close": {
                     script: 'mirun.close();'

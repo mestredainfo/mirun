@@ -15,35 +15,24 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-i
 <body>
     <button type="button" onclick="message()">Display message</button>
     <button type="button" onclick="confirm()">Confirm message</button>
-    <button type="button" onclick="confirm(true)">Confirm (4 Buttons)</button>
     <div id="info"></div>
     <script>
         async function message() {
-            mirun.alert('Information message', 'This is an example of a message!', 'info');
+            mirun.alert('Information message', 'This is an example of a message!', 'info', 'Continue');
         }
 
-        async function confirm(buttons) {
-            if (buttons) {
-                mirun.confirm('Confirmation message', 'This is an example of a message!', 'error', 'Button 1', 'Button 2').then((result) => {
-                    if (result == 1) {
-                        document.getElementById('info').innerHTML = 'Not confirmed';
-                    } else if (result == 2) {
-                        document.getElementById('info').innerHTML = 'Button 1';
-                    } else if (result == 3) {
-                        document.getElementById('info').innerHTML = 'Button 2';
-                    } else {
-                        document.getElementById('info').innerHTML = 'Confirmed';
-                    }
-                });
-            } else {
-                mirun.confirm('Confirmation message', 'This is an example of a message!', 'error').then((result) => {
-                    if (result) {
-                        document.getElementById('info').innerHTML = 'Not confirmed';
-                    } else {
-                        document.getElementById('info').innerHTML = 'Confirmed';
-                    }
-                });
-            }
+        async function confirm() {
+            mirun.confirm('Confirmation message', 'This is an example of a message!', 'error', 'Continue', 'Cancel', 'Button1', 'Button2').then((result) => {
+                if (result == 1) {
+                    document.getElementById('info').innerHTML = 'Not confirmed';
+                } else if (result == 2) {
+                    document.getElementById('info').innerHTML = 'Button 1';
+                } else if (result == 3) {
+                    document.getElementById('info').innerHTML = 'Button 2';
+                } else {
+                    document.getElementById('info').innerHTML = 'Confirmed';
+                }
+            });
         }
     </script>
 </body>
